@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="https://t4is.mx.uv/libros" 
+xmlns:tns="https://t4is.mx.uv/libros" 
+elementFormDefault="qualified">
+
+    <xs:element name="RegistrarLibroRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="titulo" type="xs:string"/>
+                <xs:element name="categoria" type="xs:string"/>
+                <xs:element name="autor" type="xs:string"/>
+                <xs:element name="precio" type="xs:float"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="RegistrarLibroResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="respuesta" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name = "BorrarLibroRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="BorrarLibroResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name ="respuesta" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name = "EditarLibroRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+                <xs:element name="titulo" type="xs:string"/>
+                <xs:element name="categoria" type="xs:string"/>
+                <xs:element name="autor" type="xs:string"/>
+                <xs:element name="precio" type="xs:float"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="EditarLibroResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name ="respuesta" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name = "BuscarLibroRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="BuscarLibroResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="1" name="respuestaBuscar">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="id" type="xs:int"/>
+                            <xs:element name="titulo" type ="xs:string"/>
+                            <xs:element name="autor" type ="xs:string"/>
+                            <xs:element name="categoria" type ="xs:string"/>
+                            <xs:element name="precio" type ="xs:float"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="MostrarLibrosRequest"/>
+
+    <xs:element name="MostrarLibrosResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="respuesta">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="id" type="xs:int"/>
+                            <xs:element name="titulo" type ="xs:string"/>
+                            <xs:element name="autor" type ="xs:string"/>
+                            <xs:element name="categoria" type ="xs:string"/>
+                            <xs:element name="precio" type ="xs:float"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

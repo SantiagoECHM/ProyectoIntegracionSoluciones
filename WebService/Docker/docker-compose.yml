@@ -1,0 +1,43 @@
+version: "3.7"
+
+networks:
+  red:
+    external: true
+  
+services: 
+  libros:
+    image: santiago840/libros:1.0
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      - MYSQL_HOST=db
+    expose:
+      - "8080"
+    networks:
+      - red
+    links:
+      - db
+    depends_on:
+      - db
+
+  db:
+    image: santiago840/my-db:1.0
+    restart: always
+    environment:
+      - MYSQL_DATABASE=tienda
+      - MYSQL_USER=yo
+      - MYSQL_PASSWORD=123456
+      - MYSQL_ROOT_PASSWORD=123456
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    networks:
+      - red
+    volumes:
+      - my-datavolume:/var/lib/mysql
+  volumes:
+    my-datavolume:
+    
+    

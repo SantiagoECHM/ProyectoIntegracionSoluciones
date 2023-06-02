@@ -6,7 +6,7 @@ networks:
   
 services: 
   ventas:
-    image: santiago840/ventas:1.0
+    image: santiago840/ventas:3.0
     restart: always
     ports:
       - 8080:8080
@@ -22,10 +22,10 @@ services:
       - db
 
   db:
-    image: santiago840/my-db:1.0
+    image: santiago840/ventasbd:1.0
     restart: always
     environment:
-      - MYSQL_DATABASE=empleados
+      - MYSQL_DATABASE=tienda
       - MYSQL_USER=yo
       - MYSQL_PASSWORD=123456
       - MYSQL_ROOT_PASSWORD=123456
@@ -36,8 +36,8 @@ services:
     networks:
       - red
     volumes:
-      - my-datavolume:/var/lib/mysql
+      - mi-volumencito:/var/lib/mysql
 volumes:
-  my-datavolume:
+  mi-volumencito:
     
     

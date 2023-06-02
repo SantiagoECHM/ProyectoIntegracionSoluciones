@@ -16,7 +16,7 @@ import org.springframework.xml.xsd.XsdSchema;
 @Configuration
 public class Configuracion extends WsConfigurerAdapter {
     @Bean
-    public XsdSchema librosSchema() {
+    public XsdSchema empleadosSchema() {
         return new SimpleXsdSchema(new ClassPathResource("esquema.xsd"));
     }
 
@@ -29,13 +29,13 @@ public class Configuracion extends WsConfigurerAdapter {
         return new ServletRegistrationBean<>(servlet, "/ws/*");
     }
 
-    @Bean(name = "libros")
-    public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema librosSchema) {
+    @Bean(name = "empleados")
+    public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema empleadosSchema) {
         DefaultWsdl11Definition wsdl = new DefaultWsdl11Definition();
-        wsdl.setPortTypeName("librosPort");
+        wsdl.setPortTypeName("empleadoPort");
         wsdl.setLocationUri("/ws");
-        wsdl.setTargetNamespace("https://t4is.mx.uv/libros");
-        wsdl.setSchema(librosSchema);
+        wsdl.setTargetNamespace("https://t4is.mx.uv/empleados");
+        wsdl.setSchema(empleadosSchema);
         return wsdl;
     }
 }

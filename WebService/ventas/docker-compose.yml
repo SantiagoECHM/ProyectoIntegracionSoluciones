@@ -36,22 +36,6 @@ services:
       - db
     depends_on:
       - db
-  
-  empleados:
-    image: santiago840/empleados:1.0
-    restart: always
-    ports:
-      - 8082:8080
-    environment:
-      - MYSQL_HOST=db
-    expose:
-      - "8080"
-    networks:
-      - red
-    links:
-      - db
-    depends_on:
-      - db
 
   db:
     image: santiago840/ventasbd:1.0

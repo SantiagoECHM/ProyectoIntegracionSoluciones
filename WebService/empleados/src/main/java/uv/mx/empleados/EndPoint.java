@@ -14,11 +14,11 @@ import https.t4is_mx_uv.empleados.BuscarEmpleadoRequest;
 import https.t4is_mx_uv.empleados.BuscarEmpleadoResponse;
 import https.t4is_mx_uv.empleados.EditarEmpleadoRequest;
 import https.t4is_mx_uv.empleados.EditarEmpleadoResponse;
-import https.t4is_mx_uv.empleados.MostrarEmpleadoResponse;
+import https.t4is_mx_uv.empleados.MostrarEmpleadosResponse;
 import https.t4is_mx_uv.empleados.RegistrarEmpleadoRequest;
 import https.t4is_mx_uv.empleados.RegistrarEmpleadoResponse;
 import https.t4is_mx_uv.empleados.BuscarEmpleadoResponse.RespuestaBuscar;
-import https.t4is_mx_uv.empleados.MostrarEmpleadoResponse.Respuesta;;
+import https.t4is_mx_uv.empleados.MostrarEmpleadosResponse.Respuesta;;
 
 @Endpoint
 public class EndPoint {
@@ -118,8 +118,8 @@ public class EndPoint {
 
     @PayloadRoot(localPart = "MostrarEmpleadosRequest", namespace = nameSpace_uri)
     @ResponsePayload
-    public MostrarEmpleadoResponse MostrarEmpleados() {
-        MostrarEmpleadoResponse respuesta = new MostrarEmpleadoResponse();
+    public MostrarEmpleadosResponse MostrarEmpleados() {
+        MostrarEmpleadosResponse respuesta = new MostrarEmpleadosResponse();
         ArrayList<Empleado> empleado;
         empleado = (ArrayList<Empleado>) empleadoRepositorio.findAll();
 

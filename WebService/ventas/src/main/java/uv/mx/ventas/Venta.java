@@ -10,7 +10,6 @@ public class Venta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Integer cantidad;
     private String nombreCliente;
     private String metodoDePago;
     private String fecha;
@@ -39,14 +38,6 @@ public class Venta {
 
     public void setMetodoDePago(String metodoDePago) {
         this.metodoDePago = metodoDePago;
-    }
-
-    public Integer getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(Integer cantidad) {
-        this.cantidad = cantidad;
     }
 
     public Float getPrecioTotal() {

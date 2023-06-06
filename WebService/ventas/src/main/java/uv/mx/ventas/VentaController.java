@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+//Microservicio generado por Santiago Emmanuel Chávez Murrieta
 @RestController
 @RequestMapping("/tienda/ventas")
 public class VentaController {
@@ -30,7 +31,7 @@ public class VentaController {
         return this.ventaServicio.getVentasById(id);
     }
 
-    @GetMapping(path = "/cliente/nombre/{nombre}")
+    @GetMapping(path = "/cliente/{nombre}")
     public List<Venta> getVentasByNameClient(@PathVariable("nombre") String nombre) {
         return this.ventaServicio.getVentasByNameClient(nombre);
     }

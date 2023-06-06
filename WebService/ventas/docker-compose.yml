@@ -6,7 +6,7 @@ networks:
   
 services: 
   ventas:
-    image: santiago840/ventas:3.0
+    image: santiago840/ventas:4.0
     restart: always
     ports:
       - 8080:8080
@@ -54,7 +54,7 @@ services:
       - db
 
   db:
-    image: santiago840/ventasbd:1.0
+    image: santiago840/ventasbd:2.0
     restart: always
     environment:
       - MYSQL_DATABASE=tienda

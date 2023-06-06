@@ -49,7 +49,6 @@ public class VentaServicio {
         Venta venta = ventaRepositorio.findById(id).get();
         venta.setNombreCliente(peticion.getNombreCliente());
         venta.setMetodoDePago(peticion.getMetodoDePago());
-        venta.setCantidad(peticion.getCantidad());
         venta.setPrecioTotal(peticion.getPrecioTotal());
         venta.setFecha(peticion.getFecha());
         ventaRepositorio.save(venta);

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 public interface VentaRepositorio extends CrudRepository<Venta, Integer> {
     List<Venta> findVentasByNombreCliente(@Param("nombreCliente") String nombre);
 
-    List<Venta> findVentasByFecha(@Param("fechaCliente") String fecha);
+    List<Venta> findVentasByFecha(@Param("fecha") String fecha);
 
     @Query("SELECT e FROM Venta e WHERE e.precioTotal > ?1")
     ArrayList<Venta> findVentasByVentasMayores(Float valor);

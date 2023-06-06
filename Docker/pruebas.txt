@@ -1,0 +1,30 @@
+docker ps
+dockerdocker exec -it <nombre_o_id_del_contenedor> mysql -u yo -p
+SHOW DATABASES;
+USE tienda;
+SHOW TABLES;
+DESCRIBE venta;
+SELECT * FROM venta;
+
+ {
+    "nombreCliente":"Santiago",
+    "metodoDePago": "tarjeta",
+    "fecha": "2023-06-06",
+    "montoRecibido": 900,
+    "precioTotal": 76.87
+}
+
+<nombre>Carlos</nombre>
+<turno>Vespertino</turno>
+<puesto>Gerente</puesto>
+<sueldo>1500</sueldo>
+
+<titulo>Patito Feo</titulo>
+            <categoria>Infantil</categoria>
+            <autor>Hans Christian Andersen</autor>
+            <precio>20.4</precio>
+
+<titulo>Los tres cerditos</titulo>
+            <categoria>Terror</categoria>
+            <autor>James Orchard Halliwell</autor>
+            <precio>20.4</precio>

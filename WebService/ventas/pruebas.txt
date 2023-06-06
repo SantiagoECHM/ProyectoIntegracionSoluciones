@@ -1,7 +1,0 @@
-docker ps
-dockerdocker exec -it <nombre_o_id_del_contenedor> mysql -u yo -p
-SHOW DATABASES;
-USE tienda;
-SHOW TABLES;
-DESCRIBE venta;
-SELECT * FROM venta;

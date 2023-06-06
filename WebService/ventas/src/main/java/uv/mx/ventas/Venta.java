@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 
 @Entity
 public class Venta {
@@ -15,6 +16,7 @@ public class Venta {
     private String fecha;
     private Float montoRecibido;
     private Float precioTotal;
+    private Float cambio;
 
     public Integer getId() {
         return id;
@@ -64,4 +66,12 @@ public class Venta {
         this.montoRecibido = montoRecibido;
     }
 
+    public Float getCambio() {
+        cambio = montoRecibido - precioTotal;
+        return cambio;
+    }
+
+    public void setCambio(Float cambio) {
+        this.cambio = cambio;
+    }
 }

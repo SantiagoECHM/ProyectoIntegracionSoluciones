@@ -1,8 +1,12 @@
 version: "3.7"
 
+networks:
+  red:
+    external: true
+  
 services: 
-  ventas:
-    image: santiago840/ventas:4.0
+  pedidos:
+    image: santiago840/pedidos:1.0
     restart: always
     ports:
       - 8080:8080
@@ -34,7 +38,7 @@ services:
       - db
   
   empleados:
-    image: santiago840/vempleados:1.0
+    image: santiago840/empleado:1.0
     restart: always
     ports:
       - 8082:8080
@@ -50,7 +54,7 @@ services:
       - db
 
   db:
-    image: santiago840/ventasbd:1.0
+    image: santiago840/pedidosbd:1.0
     restart: always
     environment:
       - MYSQL_DATABASE=tienda
@@ -68,5 +72,4 @@ services:
 volumes:
   mi-volumencito:
     
-networks:
-  red:    
+    

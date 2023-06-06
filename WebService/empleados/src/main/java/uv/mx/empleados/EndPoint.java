@@ -77,7 +77,8 @@ public class EndPoint {
             empleado.setSueldo(sueldo);
             empleadoRepositorio.save(empleado);
             respuesta.setRespuesta(
-                    "Se ha actualizado correctamente el empleado con id " + peticion.getId() + " " + peticion.getNombre());
+                    "Se ha actualizado correctamente el empleado con id " + peticion.getId() + " "
+                            + peticion.getNombre());
         } else {
             respuesta.setRespuesta("Asegurese de que los campos esten llenos y el id sea correcto");
         }

@@ -26,7 +26,7 @@ public class VentaController {
         return this.ventaServicio.getVentas();
     }
 
-    @GetMapping(path = "/id/{id}")
+    @GetMapping(path = "/{id}")
     public Optional<Venta> getVentasById(@PathVariable("id") Integer id) {
         return this.ventaServicio.getVentasById(id);
     }
@@ -56,7 +56,7 @@ public class VentaController {
         return this.ventaServicio.guardarVenta(venta);
     }
 
-    @DeleteMapping(path = "/id/{id}")
+    @DeleteMapping(path = "/{id}")
     public String eliminarVenta(@PathVariable("id") Integer id) {
         boolean ok = this.ventaServicio.eliminarVenta(id);
         if (ok) {
@@ -66,7 +66,7 @@ public class VentaController {
         }
     }
 
-    @PutMapping(path = "/id/{id}")
+    @PutMapping(path = "/{id}")
     public Venta editarVenta(@RequestBody Venta venta, @PathVariable("id") Integer id) {
         return this.ventaServicio.editarVenta(venta, id);
     }

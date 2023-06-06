@@ -37,6 +37,7 @@ public class VentaServicio {
     }
 
     public Venta guardarVenta(Venta venta) {
+        venta.setCambio(venta.getCambio());
         return ventaRepositorio.save(venta);
     }
 
@@ -51,6 +52,8 @@ public class VentaServicio {
         venta.setMetodoDePago(peticion.getMetodoDePago());
         venta.setPrecioTotal(peticion.getPrecioTotal());
         venta.setFecha(peticion.getFecha());
+        venta.setMontoRecibido(peticion.getMontoRecibido());
+        venta.setCambio(venta.getCambio());
         ventaRepositorio.save(venta);
         return venta;
     }

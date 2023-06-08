@@ -124,17 +124,25 @@ public class EndPoint {
         ArrayList<Empleado> empleado;
         empleado = (ArrayList<Empleado>) empleadoRepositorio.findAll();
 
-        for (int i = 0; i < empleado.size(); i++) {
+        if (empleado.isEmpty()) {
+            // No hay datos disponibles
             Respuesta respuesta2 = new Respuesta();
-            respuesta2.setId(empleado.get(i).getId());
-            respuesta2.setNombre(empleado.get(i).getNombre());
-            respuesta2.setPuesto(empleado.get(i).getPuesto());
-            respuesta2.setTurno(empleado.get(i).getTurno());
-            respuesta2.setSueldo(empleado.get(i).getSueldo());
+            respuesta2.setMensaje("No hay datos disponibles");
 
             respuesta.getRespuesta().add(respuesta2);
+        } else {
+            for (int i = 0; i < empleado.size(); i++) {
+                Respuesta respuesta2 = new Respuesta();
+                respuesta2.setId(empleado.get(i).getId());
+                respuesta2.setNombre(empleado.get(i).getNombre());
+                respuesta2.setPuesto(empleado.get(i).getPuesto());
+                respuesta2.setTurno(empleado.get(i).getTurno());
+                respuesta2.setSueldo(empleado.get(i).getSueldo());
+
+                respuesta.getRespuesta().add(respuesta2);
+            }
         }
 
-        return respuesta;
-    }
+    return respuesta;
+}
 }

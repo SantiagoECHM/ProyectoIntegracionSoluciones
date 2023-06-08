@@ -6,10 +6,18 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/* Esta clase JPA (Java Persistence API) que representa una tabla en una base de datos relacional. */
+/* Esta anotación indica que la clase Empleado es una entidad que se mapeará a una tabla en la base de datos */
 @Entity
+/* como se llamara la tabla */
 @Table(name = "libros")
 public class Libro {
+    /* indica que la propiedad id es la clave primaria de la entidad Empleado */
     @Id
+    /*
+     * se utiliza para especificar cómo se generará automáticamente el valor de la
+     * clave primaria.
+     */
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String categoria;

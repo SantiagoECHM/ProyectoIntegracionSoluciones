@@ -12,6 +12,7 @@ import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
 import org.springframework.xml.xsd.SimpleXsdSchema;
 import org.springframework.xml.xsd.XsdSchema;
 
+/* Dentro de nuestra clase configuración estableceremos las rutas por donde estará nuestro esquema.xsd */
 @EnableWs
 @Configuration
 public class Configuracion extends WsConfigurerAdapter {
@@ -26,14 +27,15 @@ public class Configuracion extends WsConfigurerAdapter {
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
         servlet.setApplicationContext(applicationContext);
         servlet.setTransformWsdlLocations(true);
-        return new ServletRegistrationBean<>(servlet, "/ws/*");
+        return new ServletRegistrationBean<>(servlet, "/tienda/*");
     }
 
+    /* En este apartado para poder colocar la uri de donde se ingresara y nuestro objetivo de espacio de nombre */
     @Bean(name = "empleados")
     public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema empleadosSchema) {
         DefaultWsdl11Definition wsdl = new DefaultWsdl11Definition();
         wsdl.setPortTypeName("empleadoPort");
-        wsdl.setLocationUri("/ws");
+        wsdl.setLocationUri("/tienda");
         wsdl.setTargetNamespace("https://t4is.mx.uv/empleados");
         wsdl.setSchema(empleadosSchema);
         return wsdl;

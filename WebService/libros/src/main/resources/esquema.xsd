@@ -4,9 +4,13 @@ targetNamespace="https://t4is.mx.uv/libros"
 xmlns:tns="https://t4is.mx.uv/libros" 
 elementFormDefault="qualified">
 
+<!-- se utiliza para indicar que es un elemento -->
     <xs:element name="RegistrarLibroRequest">
+    <!-- un elemento de tipo complejo que puede tener dentro de el más elementos -->
         <xs:complexType>
+        <!-- indica la secuencia de como se van a mostrar los elementos -->
             <xs:sequence>
+              <!-- indica los elementos que contiene el elemento principal con su tipo de dato y nombre  específico -->
                 <xs:element name="titulo" type="xs:string"/>
                 <xs:element name="categoria" type="xs:string"/>
                 <xs:element name="autor" type="xs:string"/>
@@ -23,6 +27,7 @@ elementFormDefault="qualified">
         </xs:complexType>
     </xs:element>
 
+<!-- En este apartado se cera un element que lo que hace es pedir un id a eliminar -->
     <xs:element name = "BorrarLibroRequest">
         <xs:complexType>
             <xs:sequence>
@@ -31,6 +36,7 @@ elementFormDefault="qualified">
         </xs:complexType>
     </xs:element>
 
+<!-- Con el id obtenido de la petición en la respuesta se manda una respuesta String -->
     <xs:element name="BorrarLibroResponse">
         <xs:complexType>
             <xs:sequence>
@@ -39,6 +45,7 @@ elementFormDefault="qualified">
         </xs:complexType>
     </xs:element>
 
+<!-- En este apartado se piden todos los elementos y el id a editar -->
     <xs:element name = "EditarLibroRequest">
         <xs:complexType>
             <xs:sequence>
@@ -59,6 +66,7 @@ elementFormDefault="qualified">
         </xs:complexType>
     </xs:element>
 
+<!-- En este apartado se busca un id por medio del element id que hace una petición-->
     <xs:element name = "BuscarLibroRequest">
         <xs:complexType>
             <xs:sequence>
@@ -67,9 +75,11 @@ elementFormDefault="qualified">
         </xs:complexType>
     </xs:element>
 
+<!-- En este apartado al obtener la petición responde con un elemento y datos que anteriormente se pidieron por ID -->
     <xs:element name="BuscarLibroResponse">
         <xs:complexType>
             <xs:sequence>
+            <!-- el maxOccurs="1" sirve para establecer que solo puede obtener un elemento y no repetirse  -->
                 <xs:element maxOccurs="1" name="respuestaBuscar">
                     <xs:complexType>
                         <xs:sequence>
@@ -87,9 +97,11 @@ elementFormDefault="qualified">
 
     <xs:element name="MostrarLibrosRequest"/>
 
+<!-- se utiliza para indicar que un elemento puede repetirse un número ilimitado de veces dentro de su contenedor.-->
     <xs:element name="MostrarLibrosResponse">
         <xs:complexType>
             <xs:sequence>
+            <!-- se utiliza para indicar que un elemento puede repetirse un número ilimitado de veces dentro de su contenedor.-->
                 <xs:element maxOccurs="unbounded" name="respuesta">
                     <xs:complexType>
                         <xs:sequence>

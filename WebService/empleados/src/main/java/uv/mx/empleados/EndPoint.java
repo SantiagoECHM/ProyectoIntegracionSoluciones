@@ -150,7 +150,7 @@ public class EndPoint {
         /* Para encontrar a todos los empleados utilizamos un casteo de ArrayList empleado y buscando cada empleado un método findAll que Buscará a todos */
         empleado = (ArrayList<Empleado>) empleadoRepositorio.findAll();
 
-       /* Para que muestre cada dato debemos saber el tamaño de nuestro tamaño del empleado y seguido de establecer sus atributos */
+       /* Para que muestre cada dato debemos saber el tamaño de nuestra lista empleado y seguido de establecer sus atributos */
         for (int i = 0; i < empleado.size(); i++) {
             Respuesta respuesta2 = new Respuesta();
             respuesta2.setId(empleado.get(i).getId());

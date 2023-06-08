@@ -73,6 +73,7 @@ public class Venta {
         this.montoRecibido = montoRecibido;
     }
 
+    /* El cambio se creará a partir del montoRecibido-precioTotal */
     public Float getCambio() {
         cambio = montoRecibido - precioTotal;
         return cambio;
